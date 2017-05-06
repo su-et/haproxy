@@ -1,4 +1,4 @@
-FROM haproxy:1.6.6-alpine
+FROM haproxy:1.7.5-alpine
 MAINTAINER Xu Wang <xuwang@gmail.com>
 
 ENV CONFD_VERSION=v0.11.0
