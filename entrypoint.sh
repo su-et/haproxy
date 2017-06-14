@@ -9,7 +9,7 @@ case ${1} in
     echo "show servers state" | socat - /var/lib/haproxy/states/socket > /var/lib/haproxy/states/server_state
     # Delay SYN at the TCP level while we restart haproxy.
     iptables -I INPUT -p tcp --match multiport --dports 80,443 --syn -j DROP
-    pgrep -x haproxy && pkill -x haproxy
+    pgrep -x /usr/local/sbin/haproxy && pkill -x /usr/local/sbin/haproxy
     sleep 0.5
     iptables -D INPUT -p tcp --match multiport --dports 80,443 --syn -j DROP
     ;;
